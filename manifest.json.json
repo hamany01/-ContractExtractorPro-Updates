@@ -1,0 +1,27 @@
+{
+  "manifest_version": 3,
+  "name": "Contract Extractor",
+  "version": "1.0.0",
+  "description": "التقاط نص الصفحة وإرساله إلى برنامج ContractExtractorPro على localhost:5005",
+  "permissions": ["activeTab", "scripting"],
+  "host_permissions": ["http://localhost:5005/*"],
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "icon.png",
+      "48": "icon.png",
+      "128": "icon.png"
+    }
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    { "matches": ["<all_urls>"], "js": ["content.js"] }
+  ],
+  "icons": {
+    "16": "icon.png",
+    "48": "icon.png",
+    "128": "icon.png"
+  }
+}
